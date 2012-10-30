@@ -6,6 +6,7 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 import org.slim3.tester.ControllerTestCase;
 
+
 public class AdminControllerTest extends ControllerTestCase {
 
     @Test

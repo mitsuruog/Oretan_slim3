@@ -74,4 +74,38 @@ public class WordServiceTest extends AppEngineTestCase {
         //TODO Rundam Test
 
     }
+
+    @Test
+    public void 削除1件() throws Exception{
+
+        Map<String, Object> word = new HashMap<String, Object>();
+        Word worded = service.add(word);
+
+        assertThat(worded, is(notNullValue()));
+
+        word.put("key", worded.getKey());
+        Word deleted = service.deleteSingle(word);
+
+        assertThat(deleted, is(notNullValue()));
+
+        Word selected = service.getByKey(worded.getKey());
+
+        assertThat(selected, is(nullValue()));
+
+    }
+    @Test
+    public void Keyで1件() throws Exception{
+
+        Map<String, Object> word = new HashMap<String, Object>();
+        Word worded = service.add(word);
+
+        assertThat(worded, is(notNullValue()));
+
+        Word selected = service.getByKey(worded.getKey());
+
+        assertThat(selected, is(notNullValue()));
+        assertThat(selected, is(worded));
+
+    }
+
 }
