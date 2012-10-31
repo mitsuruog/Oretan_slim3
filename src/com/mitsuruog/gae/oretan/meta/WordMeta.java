@@ -1,6 +1,6 @@
 package com.mitsuruog.gae.oretan.meta;
 
-//@javax.annotation.Generated(value = { "slim3-gen", "@VERSION@" }, date = "2012-10-29 23:30:47")
+//@javax.annotation.Generated(value = { "slim3-gen", "@VERSION@" }, date = "2012-10-31 15:31:05")
 /** */
 public final class WordMeta extends org.slim3.datastore.ModelMeta<com.mitsuruog.gae.oretan.model.Word> {
 
