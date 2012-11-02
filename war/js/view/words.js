@@ -15,7 +15,7 @@ Oretan.View.Words = Backbone.View.extend({
 		'mouseout': 'mouseout'
 	},
 	render: function(){
-		console.log('render');
+		//console.log('render');
 		this.collection.fetchByQuery('');
 
 	    //直接DOMを書いたり、_のtemplateを使うこともできる。

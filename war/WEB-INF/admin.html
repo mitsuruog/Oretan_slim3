@@ -6,29 +6,55 @@
 </head>
 <body>
 
-	<form action="/word/put" method="post">
-		<dl>
-			<dt>English</dt>
-			<dd>
-				<input type="text" name="en" id="en" />
-			</dd>
-			<dt>Japanese</dt>
-			<dd>
-				<input type="text" name="ja" id="ja" />
-			</dd>
-			<dt></dt>
-			<dd>
-				<input type="submit" id="put" />
-			</dd>
-		</dl>
-	</form>
+
+	<div class="contents">
+		<div class="putForm">
+			<form action="/word/put" method="post">
+				<dl>
+					<dt>English</dt>
+					<dd>
+						<input type="text" name="en" id="en" />
+					</dd>
+					<dt>Japanese</dt>
+					<dd>
+						<input type="text" name="ja" id="ja" />
+					</dd>
+					<dt></dt>
+					<dd>
+						<input type="submit" id="put" />
+					</dd>
+				</dl>
+			</form>
+		</div>
+
+		<ul class="words"></ul>
+	</div>
 
 
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js">
-	<script>
-		if(!window.hasOwnProperty('jQuery')){
-			document.write('<script src="js/assets/jquery-1.8.2.min.js"><\/script>');
+	<script type="text/x-tmpl" id="tmpl-word">
+	<li>
+		<span class="key"><%= key.id %></span>
+		<span class="en"><%= en %></span>
+		<span class="ja"><%= ja %></span>
+	</li>
+	</script>
+
+	<script
+		src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js">
+		<script>
+		if (!window.hasOwnProperty('jQuery')) {
+			document
+					.write('<script src="js/assets/jquery-1.8.2.min.js"><\/script>');
 		}
 	</script>
+	<script src="js/assets/underscore-min.js"></script>
+	<script src="js/assets/backbone-min.js"></script>
+	<script src="js/assets/moment.min.js"></script>
+	<script src="js/admin.js"></script>
+	<script src="js/model/word.js"></script>
+	<script src="js/collection/words.js"></script>
+	<script src="js/view/words.js"></script>
+	<script src="js/view/putForm.js"></script>
+
 </body>
 </html>
