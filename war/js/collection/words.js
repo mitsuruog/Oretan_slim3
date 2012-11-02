@@ -1,9 +1,15 @@
 (function(){
+/*
+Collection
 
+
+ */
 Oretan.Collection.Words = Backbone.Collection.extend({
+	//ここにセットさせたものがCollection扱い
+	//基本的にBackbone.Model.extendしたもの
 	model: Oretan.Model.Word,
 	url: '/word/list',
-	fetchByQuery: function(query){
+    fetchByQuery: function(query){
 
 		var self = this;
 
@@ -11,11 +17,7 @@ Oretan.Collection.Words = Backbone.Collection.extend({
 			url: self.url,
 			dataType: 'json',
 		}).done(function(data){
-
-			//TODO TypeError: undefined is not a function
-
 			self.reset(data);
-
 		}).fail(function(){
 			self.trigger('error', arguments);
 		});

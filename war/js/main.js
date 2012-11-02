@@ -18,6 +18,4 @@ $(function(){
 		collection: words
 	})
 
-	//
-	words.fetchByQuery();
 });
