@@ -27,6 +27,7 @@ Oretan.View.PutForm = Backbone.View.extend({
 			type: 'POST'
 		}).done(function(data){
 			self.collection.fetchByQuery('');
+			$(self.$el.find('input:text')).val('');
 		}).fail(function(){
 			self.trigger('error', arguments);
 		});
