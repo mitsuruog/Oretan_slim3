@@ -8,6 +8,15 @@
       body {
         padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
       }
+      li.well:HOVER{
+      	-webkit-transform: translate(5px, 5px);
+		-moz-transform: translate(5px, 5px);
+		-o-transform: translate(5px, 5px);
+		-ms-transform: translate(5px, 5px);
+      }
+      .hide{
+      	display: none;
+      }
     </style>
 <link href="css/assets/bootstrap-responsive.min.css" rel="stylesheet"/>
 </head>
@@ -36,7 +45,7 @@
  	<div class="container">
       <h1>Mitsuruog's English</h1>
       <p><a href="https://twitter.com/mitsuruog" target="_brank">@mitsuruog</a>が洋書（技術書）を読んでいる最中に分からなかった英語表現を書き溜めてます。<br/>英語ができるステキなエンジニアになりたいな。</p>
-		<p>内容はbotちゃん（<a href="https://twitter.com/mitsuruog" target="_brank">@mitsuruog_eng</a>）が定期的につぶやいてくれてます。</p>
+		<p>内容はbotちゃん（<a href="https://twitter.com/mitsuruog_eng" target="_brank">@mitsuruog_eng</a>）が定期的につぶやいてくれてます。</p>
 		<div class="contents">
 			<ul class="words"></ul>
 		</div>
@@ -44,7 +53,7 @@
     </div> <!-- /container -->
 
     <div class="container">
-    		<div class="span1"><a href="https://twitter.com/share" class="twitter-share-button" data-lang="ja">ツイート</a></div>
+    		<div class="span2"><a href="https://twitter.com/share" class="twitter-share-button" data-lang="ja">ツイート</a></div>
  			<div class="span1"><g:plusone size="medium"></g:plusone></div>
 			<div class="span1"><a href="http://b.hatena.ne.jp/entry/http://32ruogeng.appspot.com/" class="hatena-bookmark-button" data-hatena-bookmark-title="Oretan" data-hatena-bookmark-layout="simple-balloon" title="このエントリーをはてなブックマークに追加"><img src="http://b.st-hatena.com/images/entry-button/button-only.gif" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a></div>
 			<div class="fb-like span5" data-send="false" data-width="450" data-show-faces="false"></div><div id="fb-root"></div>
@@ -53,7 +62,7 @@
 
 	<script type="text/x-tmpl" id="tmpl-word">
 	<li class="well span3">
-		<span class="key"><%= key.id %></span>
+		<span class="key hide"><%= key.id %></span>
 		<span class="en"><%= en %></span>
 		<span class="ja"><%= ja %></span>
 	</li>
