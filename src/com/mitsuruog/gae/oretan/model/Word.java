@@ -1,12 +1,13 @@
 package com.mitsuruog.gae.oretan.model;
 
 import java.io.Serializable;
+import java.text.MessageFormat;
 import java.util.Date;
-
-import com.google.appengine.api.datastore.Key;
 
 import org.slim3.datastore.Attribute;
 import org.slim3.datastore.Model;
+
+import com.google.appengine.api.datastore.Key;
 
 @Model(schemaVersion = 1)
 public class Word implements Serializable {
@@ -22,8 +23,8 @@ public class Word implements Serializable {
     private String en;
     private String ja;
     private Date registDate = new Date();
-    
-    
+
+
     /**
      * Returns the key.
      *
@@ -138,5 +139,10 @@ public class Word implements Serializable {
      */
     public void setRegistDate(Date registDate) {
         this.registDate = registDate;
+    }
+
+
+    public String getTweet(){
+        return MessageFormat.format("{0}({1})", getEn(), getJa());
     }
 }

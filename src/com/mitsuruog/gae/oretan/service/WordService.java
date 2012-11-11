@@ -2,6 +2,7 @@ package com.mitsuruog.gae.oretan.service;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 import org.slim3.datastore.Datastore;
 import org.slim3.util.BeanUtil;
@@ -43,8 +44,9 @@ public class WordService {
      * @return
      */
     public Word getRundomSingle(){
-        //TODO Rundam Get
-        return Datastore.query(w).asSingle();
+        List<Key> keys = Datastore.query(w).asKeyList();
+        Random random = new Random();
+        return Datastore.get(w, keys.get(random.nextInt(keys.size())));
     }
 
     /**

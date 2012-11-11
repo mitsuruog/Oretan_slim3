@@ -21,8 +21,9 @@ public class RefollowServlet extends HttpServlet {
 			throws ServletException, IOException {
 
 		LOGGER.info("★Start!!");
+		TwitterHelper twitterHelper = new TwitterHelper();
 		try {
-			TwitterHelper.refollow();
+		    twitterHelper.refollow();
 		} catch (TwitterException e) {
 			throw new ServletException(e);
 		}

@@ -21,8 +21,9 @@ public class UnfollowServlet extends HttpServlet {
 			throws ServletException, IOException {
 
 		LOGGER.info("★Start!!");
-		try {
-			TwitterHelper.unfollow();
+        TwitterHelper twitterHelper = new TwitterHelper();
+        try {
+            twitterHelper.unfollow();
 		} catch (TwitterException e) {
 			throw new ServletException(e);
 		}
