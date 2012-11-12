@@ -13,6 +13,11 @@
         <param-name>javax.servlet.jsp.jstl.fmt.request.charset</param-name>
         <param-value>UTF-8</param-value>
     </context-param>
+    <!-- japanese time -->
+	<context-param>
+		<param-name>javax.servlet.jsp.jstl.fmt.timeZone</param-name>
+		<param-value>JST</param-value>
+	</context-param>
 
     <filter>
         <filter-name>HotReloadingFilter</filter-name>
@@ -141,4 +146,5 @@
 			<role-name>admin</role-name>
 		</auth-constraint>
 	</security-constraint>
+
 </web-app>

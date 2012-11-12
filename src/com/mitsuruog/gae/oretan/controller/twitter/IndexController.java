@@ -1,6 +1,5 @@
 package com.mitsuruog.gae.oretan.controller.twitter;
 
-import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.logging.Logger;
 
@@ -27,10 +26,11 @@ public class IndexController extends Controller {
         String end = "2300";
 
         //稼働時間判定
-        SimpleDateFormat f = new SimpleDateFormat("HHmm");
+        String pattern = "HHmm";
         Date now = new Date();
-        if(dateUtil.isActiveTime(f.parse(start), f.parse(end), now) == false){
-            LOGGER.info("Now is not active time:" + f.format(now));
+        if(dateUtil.isActiveTime(dateUtil.getJSTDate(start, pattern),
+                dateUtil.getJSTDate(end, pattern), dateUtil.getJSTDate(now)) == false){
+            LOGGER.info("Now is not active time:" + dateUtil.getJSTDate(now, pattern));
             return null;
         }
 
