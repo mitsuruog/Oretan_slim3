@@ -1,6 +1,5 @@
 package com.mitsuruog.gae.util;
 
-import java.io.FileReader;
 import java.io.IOException;
 import java.util.Properties;
 
@@ -14,7 +13,7 @@ public class Prop {
      * @throws IOException
      */
     public Prop(String path) throws IOException {
-        p.load(new FileReader(path));
+        p.load(this.getClass().getClassLoader().getResourceAsStream(path));
     }
 
     /**

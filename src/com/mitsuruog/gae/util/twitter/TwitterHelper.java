@@ -24,17 +24,25 @@ public class TwitterHelper {
     private final static String ACCESS_TOKEN_SECRET = "twitter.accessTokenSecret";
 
 	private final static Logger LOGGER = Logger.getLogger(TwitterHelper.class.getName());
-	private Twitter twitter = null;
+	private static Twitter twitter = TwitterFactory.getSingleton();
+	static{
+        Prop p;
+        try {
+            p = new Prop("keys.properties");
+            twitter.setOAuthConsumer(p.get(CONSUMER_KEY), p.get(CONSUMER_SECRETY));
+            twitter.setOAuthAccessToken(new AccessToken(p.get(ACCESS_TOKEN), p.get(ACCESS_TOKEN_SECRET)));
+        } catch (IOException e) {
+            LOGGER.severe(e.getMessage());
+            e.printStackTrace();
+        }
+	}
 
 	/**
 	 * @throws IOException
 	 *
 	 */
 	public TwitterHelper() throws IOException {
-        Prop p = new Prop("src/keys.properties");
-        twitter = TwitterFactory.getSingleton();
-        twitter.setOAuthConsumer(p.get(CONSUMER_KEY), p.get(CONSUMER_SECRETY));
-        twitter.setOAuthAccessToken(new AccessToken(p.get(ACCESS_TOKEN), p.get(ACCESS_TOKEN_SECRET)));
+
 	}
 
 	/**

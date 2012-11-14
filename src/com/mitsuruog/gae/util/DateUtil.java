@@ -22,7 +22,7 @@ public class DateUtil {
     }
 
     public Date getJSTDate(Date date){
-        String pattern = "yyyy/MM/dd HH:mm:ss";
+        String pattern = org.slim3.util.DateUtil.ISO_DATE_TIME_PATTERN;
         SimpleDateFormat f = new SimpleDateFormat(pattern);
         return org.slim3.util.DateUtil.toDate(f.format(date), pattern);
     }

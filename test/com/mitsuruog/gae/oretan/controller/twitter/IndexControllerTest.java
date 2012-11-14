@@ -26,7 +26,8 @@ public class IndexControllerTest extends ControllerTestCase {
         word.setJa("あああ");
 
         //TODO anyDate()的なことができない
-        DateUtil dateUtil = mock(DateUtil.class);
+        DateUtil d = mock(DateUtil.class);
+        DateUtil dateUtil = spy(d);
         when(dateUtil.isActiveTime(isA(Date.class), isA(Date.class), isA(Date.class))).thenReturn(true);
 
         TwitterHelper twitterHelper = mock(TwitterHelper.class);

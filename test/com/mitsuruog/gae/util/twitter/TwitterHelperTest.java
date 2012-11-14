@@ -19,6 +19,7 @@ public class TwitterHelperTest {
 //	public void つぶやく() throws IOException {
 //	    TwitterHelper helper = new TwitterHelper();
 //		try {
+//		    //TwitterHelper
 //		    helper.tweet("テスト");
 //			assertTrue(true);
 //		} catch (TwitterException e) {

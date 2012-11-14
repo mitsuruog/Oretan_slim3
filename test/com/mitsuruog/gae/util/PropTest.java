@@ -21,7 +21,7 @@ public class PropTest {
 
     @Test
     public void testProp() throws IOException {
-        Prop p = new Prop("src/keys.properties");
+        Prop p = new Prop("keys.properties");
         assertThat("ok", is(p.get("unittest")));
     }
 
