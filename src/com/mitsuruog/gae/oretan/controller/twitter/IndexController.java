@@ -3,8 +3,6 @@ package com.mitsuruog.gae.oretan.controller.twitter;
 import java.io.IOException;
 import java.util.logging.Logger;
 
-import javax.inject.Inject;
-
 import org.slim3.controller.Controller;
 import org.slim3.controller.Navigation;
 
@@ -15,11 +13,8 @@ import com.mitsuruog.gae.util.twitter.TwitterHelper;
 
 public class IndexController extends Controller {
 
-    @Inject
     private WordService service = new WordService();
-    @Inject
     private DateUtil dateUtil = new DateUtil();
-    @Inject
     private TwitterHelper twitterHelper = null;
 
     private static final Logger LOGGER = Logger.getLogger(IndexController.class.getName());
@@ -48,6 +43,7 @@ public class IndexController extends Controller {
         Word word = service.getRundomSingle();
         if(word == null){
             LOGGER.warning("word is null value.");
+            return null;
         }
 
         twitterHelper.tweet(word.getTweet());
@@ -57,30 +53,4 @@ public class IndexController extends Controller {
 
     }
 
-    /**
-     * serviceを設定します。
-     * @param service service
-     */
-    @Inject
-    public void setService(WordService service) {
-        this.service = service;
-    }
-
-    /**
-     * dateUtilを設定します。
-     * @param dateUtil dateUtil
-     */
-    @Inject
-    public void setDateUtil(DateUtil dateUtil) {
-        this.dateUtil = dateUtil;
-    }
-
-    /**
-     * twitterHelperを設定します。
-     * @param twitterHelper twitterHelper
-     */
-    @Inject
-    public void setTwitterHelper(TwitterHelper twitterHelper) {
-        this.twitterHelper = twitterHelper;
-    }
 }

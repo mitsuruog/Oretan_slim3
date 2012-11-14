@@ -45,6 +45,9 @@ public class WordService {
      */
     public Word getRundomSingle(){
         List<Key> keys = Datastore.query(w).asKeyList();
+        if(keys.size() == 0){
+            return null;
+        }
         Random random = new Random();
         return Datastore.get(w, keys.get(random.nextInt(keys.size())));
     }
